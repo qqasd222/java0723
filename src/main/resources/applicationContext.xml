@@ -5,10 +5,12 @@
 	xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
-		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+		http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd">
 	
 	<!-- 开启注解扫描 -->
 	<context:annotation-config/>
@@ -72,5 +74,24 @@
 			<tx:method name="get*" isolation="READ_COMMITTED"  read-only="true"/>
 		</tx:attributes>
 	</tx:advice> -->
+	
+	
+	<!-- 导入cxf框架自带的配置文件 -->
+<import resource="classpath:META-INF/cxf/cxf.xml"/>
+
+<jaxrs:server id="restService1" address="/hello">
+  <jaxrs:serviceBeans>
+    <ref bean="mobileServiceImpl"/>
+  </jaxrs:serviceBeans>
+  <!-- 声明输出的格式 -->
+  <jaxrs:extensionMappings>
+   <entry key="json" value="application/json"/>
+   <entry key="xml" value="application/xml"/>
+  </jaxrs:extensionMappings>
+  <!-- 声明处理json的具体处理类 -->
+  <jaxrs:providers>
+     <bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider"/>
+  </jaxrs:providers>
+</jaxrs:server>
 
 </beans>

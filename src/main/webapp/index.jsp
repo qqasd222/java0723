@@ -10,14 +10,20 @@
 <script type="text/javascript">
 	function seacher(){
 		var num = $("#num").val();
-		console.log(num);
 		$.ajax({
 			type : 'GET',
 			url : 'getMoblie',
 			data : {"num":num},
 			dataType : 'json',
 			success : function(rs) {
-				$("#msg").text("地区:"+rs.area+"  运营商:"+rs.mobiletype);
+			console.log(rs);
+			var msg = "";
+			if(rs){
+				msg="地区:"+rs.area+"  运营商:"+rs.mobiletype;
+			}else{
+				msg="该号码查询不到";
+			}
+			$("#msg").text(msg);
 			}
 		})
 	}

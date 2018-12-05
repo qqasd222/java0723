@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.ujiuye.bean.Mobile;
 import com.ujiuye.mapper.MobileMapper;
 import com.ujiuye.service.MobileService;
-@Service
+@Service("mobileServiceImpl")
 public class MobileServiceImpl implements MobileService{
 	@Resource
 	private MobileMapper mobileMapper;

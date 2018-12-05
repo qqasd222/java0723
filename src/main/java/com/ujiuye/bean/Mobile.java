@@ -1,5 +1,8 @@
 package com.ujiuye.bean;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name="mobile")
 public class Mobile {
 	private Integer id;
 	private String num;
