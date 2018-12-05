@@ -25,4 +25,8 @@ public class MobileController {
 		System.out.println("你好GIT");
 	}
 	
+	//测试冲突方法
+	public void ccc(){
+		System.out.println("cccc");
+	}
 }
