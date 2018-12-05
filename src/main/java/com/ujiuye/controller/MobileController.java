@@ -29,4 +29,7 @@ public class MobileController {
 	public void ccc(){
 		System.out.println("cccccc");
 	}
+	public void www(){
+		System.out.println("www");
+	}
 }
