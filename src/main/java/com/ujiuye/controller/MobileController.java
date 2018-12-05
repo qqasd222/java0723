@@ -19,4 +19,10 @@ public class MobileController {
 	public Mobile getMoblie(String num){
 		return service.getMobile(num);
 	}
+	
+	//新添加方法
+	public void test(){
+		System.out.println("你好GIT");
+	}
+	
 }
