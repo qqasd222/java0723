@@ -27,6 +27,6 @@ public class MobileController {
 	
 	//测试冲突方法
 	public void ccc(){
-		System.out.println("cccc");
+		System.out.println("cccccc");
 	}
 }
