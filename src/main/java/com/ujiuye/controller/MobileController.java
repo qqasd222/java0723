@@ -26,7 +26,7 @@ public class MobileController {
 	}
 	
 	//测试冲突方法
-	public void ccc(){
-		System.out.println("cccc");
+	public void www(){
+		System.out.println("www");
 	}
 }
