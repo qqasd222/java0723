@@ -12,7 +12,7 @@
 		var num = $("#num").val();
 		$.ajax({
 			type : 'GET',
-			url : 'getMoblie',
+			url : 'getMoblie.do',
 			data : {"num":num},
 			dataType : 'json',
 			success : function(rs) {
