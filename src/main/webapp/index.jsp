@@ -32,7 +32,7 @@
 
 </head>
 <body>
-		输入手机号:<input id="num" type="text" name="num">
+		请输入手机号:<input id="num" type="text" name="num">
 		<b id="msg"></b>
 		<br>
 		<a href="javascript:seacher()">查询</a>
